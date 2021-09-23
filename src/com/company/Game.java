@@ -26,11 +26,13 @@ implements KeyListener {
         window.setSize(width*dimension +2,height*dimension +4);
         window.setVisible(true);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
     public  void start(){
         graphics.state ="RUNNING";
 
     }
+
     public  void update() {
         if(graphics.state == "RUNNING"){
             if(checkFoodCollision()){
@@ -80,7 +82,10 @@ implements KeyListener {
              player.down();
          } else if (keyCode == KeyEvent.VK_A) {
              player.left();
-         } else {
+         } else if (keyCode == KeyEvent.VK_R){
+             graphics.state ="START";
+         }
+         else {
              player.right();
          }
      }
